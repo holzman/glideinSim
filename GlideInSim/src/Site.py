@@ -1,8 +1,7 @@
-'''
-Created on Sep 6, 2011
 
-@author: Alex
-'''
+
+'''@author: Alex'''
+
 import Queue
 import types
 
@@ -33,8 +32,6 @@ class Site(object):
     '''
     classdocs
     '''
-
-
     def __init__(self, jobs,qlength):     
         self.jobs = Queue.Queue(self.qlength)
         

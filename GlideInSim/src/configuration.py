@@ -7,10 +7,19 @@ Created on Sep 5, 2011
 import os
 import ConfigParser
 
+
 config = ConfigParser.ConfigParser()
 
 try:
-    config.open("test.cfg")
-except BaseException:
+    config.read("Gconf.cfg")
+except Exception:
     print "file not found\ncreating new"
+    cfgfile = open('./Gconf.cfg', 'w')
+finally:
+    config.add_section('Settings')
+    config.set('Settings','')
+    
 
+    
+   
+     
