@@ -13,7 +13,10 @@ class PilotState:
     def getState(self):
         return self.__class__
 
-class Death(PilotState): pass
+class Death(PilotState):
+    def isInactive(self):
+        return True
+        
     
 class Idle(PilotState): 
     def __init__ (self, maxlife=20):
@@ -52,6 +55,9 @@ class Pilot:
 
     def getTime(self):
         return self.currentState.getTime()
-
+    
+    def kill(self):
+        self.currentState.switchState(Death)
+        return self.currentState.getTime()
 
     
